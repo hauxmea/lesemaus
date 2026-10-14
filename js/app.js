@@ -436,7 +436,7 @@
     const libMissing = !window.supabase;
     view.innerHTML = `<section class="onboarding">
       <div class="onb-moon" aria-hidden="true"></div>
-      <h1 class="display">${libMissing ? 'Keine Verbindung' : 'Fast geschafft'}</h1>
+      <h1 class="display brand-title"><span class="brand-name">${libMissing ? 'Keine Verbindung' : 'Fast geschafft'}</span><span class="brand-emoji moon" aria-hidden="true">🌙</span><span class="brand-emoji violet" aria-hidden="true">🪷</span></h1>
       <p class="lead">${libMissing ? 'Lesemaus braucht eine Internetverbindung zum Starten.' : 'Lesemaus braucht noch die Verbindung zu deiner Supabase-Datenbank.'}</p>
       ${libMissing ? '<button type="button" class="btn primary" onclick="location.reload()">Erneut versuchen</button>' : `
       <div class="card glass onb-form setup">
@@ -455,9 +455,7 @@
     const draw = (msg = '', msgType = '') => {
       view.innerHTML = `<section class="onboarding">
         <div class="onb-moon" aria-hidden="true"></div>
-        <p class="eyebrow">Dein Lesetagebuch – gemeinsam</p>
-        <h1 class="display xl">Lesemaus</h1>
-        <p class="lead">Ein stiller Ort für jedes Buch, das dich je wachgehalten hat.</p>
+        <h1 class="display brand-title auth-brand"><span class="brand-name">Lesemaus</span><span class="brand-ornament" aria-hidden="true">‿̩͙⊱༒︎༻♱༺༒︎⊰‿̩͙</span></h1>
         <form class="card glass onb-form">
           <div class="segmented auth-switch" role="tablist">
             <button type="button" data-mode="login" class="${mode === 'login' ? 'active' : ''}">Anmelden</button>
@@ -504,7 +502,7 @@
     view.innerHTML = `<section class="onboarding">
       <div class="onb-moon" aria-hidden="true"></div>
       <p class="eyebrow">Willkommen</p>
-      <h1 class="display">Wer liest hier?</h1>
+      <h1 class="display brand-title"><span class="brand-name">Wer liest hier?</span><span class="brand-emoji moon" aria-hidden="true">🌙</span><span class="brand-emoji violet" aria-hidden="true">🪷</span></h1>
       <p class="lead">So sieht dich dein Lesekreis.</p>
       <form class="card glass onb-form">
         <h2>Profil erstellen</h2>
@@ -1280,7 +1278,7 @@
     if (!p) return;
     const link = (href, k, label, icon) => `<a href="${href}" class="${active === k ? 'active' : ''}"><span class="nav-icon">${icon}</span><span>${label}</span></a>`;
     topbar.innerHTML = `
-      <a class="logo" href="#/"><span class="logo-moon">☾</span><span>Lesemaus</span></a>
+      <a class="logo" href="#/"><span class="logo-moon">🌙</span><span>Lesemaus</span></a>
       <nav class="nav">
         ${link('#/', 'home', 'Start', '☾')}
         ${link('#/search', 'search', 'Entdecken', '✧')}
